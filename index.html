@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#100d20">
+<title>The Dhruv Test ✦</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap');
+:root{--bg:#100d20;--panel:rgba(28,22,49,.82);--pink:#ff78b7;--lav:#bba4ff;--mint:#83f2c5;--white:#fff8ff;--muted:#bdb4d1;--red:#ff667d;--green:#62e6a7}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;min-height:100vh;color:var(--white);font-family:'DM Sans',sans-serif;background:radial-gradient(ellipse at 15% 10%,#38204f 0,transparent 36%),radial-gradient(ellipse at 85% 85%,#20295a 0,transparent 36%),var(--bg);overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.22;background-image:radial-gradient(#fff 1px,transparent 1px);background-size:38px 38px;mask-image:linear-gradient(to bottom,black,transparent)}
+#particles{position:fixed;inset:0;overflow:hidden;pointer-events:none;z-index:0}.particle{position:absolute;bottom:-50px;animation:floatUp linear infinite;opacity:0.0;filter:drop-shadow(0 0 8px #ff78b766)}@keyframes floatUp{0%{transform:translateY(0) rotate(0) scale(.7);opacity:0}12%{opacity:.7}85%{opacity:.55}100%{transform:translateY(-115vh) rotate(260deg) scale(1.25);opacity:0}}
+main{position:relative;z-index:1;min-height:100vh;display:grid;place-items:center;padding:24px 14px}.screen{width:min(760px,100%);display:none;animation:enter .65s cubic-bezier(.2,.8,.2,1) both}.screen.active{display:block}@keyframes enter{from{opacity:0;transform:translateY(22px) scale(.985);filter:blur(5px)}to{opacity:1;transform:none;filter:blur(0)}}
+.card{position:relative;overflow:hidden;border:1px solid #ffffff1c;background:linear-gradient(145deg,#211a38e8,#17132ae8);border-radius:30px;padding:clamp(22px,5vw,48px);box-shadow:0 25px 90px #0007, inset 0 1px #ffffff0c;backdrop-filter:blur(18px)}
+.card:before{content:"";position:absolute;width:250px;height:250px;right:-125px;top:-150px;background:#ff78b71a;border-radius:50%;filter:blur(10px)}
+.eyebrow{display:inline-flex;gap:8px;align-items:center;padding:8px 13px;border:1px solid #ffb2dc44;border-radius:100px;color:#ffc3e1;background:#ff78b711;font-size:.76rem;letter-spacing:.11em;text-transform:uppercase;font-weight:700}
+h1,h2{font-family:'Playfair Display',serif;line-height:1.08;letter-spacing:-.035em;margin:18px 0}h1{font-size:clamp(2.5rem,8vw,5.2rem)}h2{font-size:clamp(2rem,6vw,3.4rem)}.gradient{background:linear-gradient(100deg,#ff9acb,#c5a9ff 52%,#83f2c5);-webkit-background-clip:text;background-clip:text;color:transparent}
+p{font-size:clamp(.98rem,2.5vw,1.1rem);line-height:1.8;color:var(--muted);margin:12px 0}.sticker{font-size:clamp(3.5rem,10vw,5.8rem);display:inline-block;filter:drop-shadow(0 8px 18px #ff78b733);animation:bob 3s ease-in-out infinite;transform-origin:center}@keyframes bob{0%,100%{transform:translateY(0) rotate(-4deg)}50%{transform:translateY(-11px) rotate(5deg)}}
+.row{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}.btn{appearance:none;border:0;border-radius:15px;padding:15px 21px;font:700 1rem 'DM Sans',sans-serif;cursor:pointer;transition:transform .2s,filter .2s,box-shadow .2s;min-height:52px}.btn:hover{transform:translateY(-3px);filter:brightness(1.08)}.btn:active{transform:scale(.98)}.primary{color:#21152f;background:linear-gradient(105deg,#ff9acb,#c6aaff);box-shadow:0 9px 25px #ff78b72a}.secondary{color:var(--white);border:1px solid #ffffff25;background:#ffffff0a}.small-note{font-size:.8rem;color:#9187aa;margin-top:18px}
+.progress-wrap{height:7px;background:#ffffff12;border-radius:99px;overflow:hidden;margin:18px 0 24px}.progress{height:100%;width:0;background:linear-gradient(90deg,var(--pink),var(--lav),var(--mint));border-radius:99px;transition:width .35s}
+.topline{display:flex;justify-content:space-between;align-items:center;gap:12px;color:#c8bddc;font-size:.85rem}.question{font-size:clamp(1.4rem,4vw,2.1rem);line-height:1.25;margin:18px 0 24px}.options{display:grid;grid-template-columns:1fr 1fr;gap:12px}.option{background:#ffffff08;color:var(--white);border:1px solid #ffffff20;border-radius:18px;padding:18px 15px;min-height:94px;font:600 1rem/1.45 'DM Sans',sans-serif;text-align:left;cursor:pointer;transition:.22s}.option:hover:not(:disabled){transform:translateY(-3px);border-color:#c6aaff99;background:#c6aaff12}.option.correct{border-color:var(--green);background:#62e6a71c;color:#b7ffdc;box-shadow:0 0 0 2px #62e6a722}.option.wrong{border-color:var(--red);background:#ff667d1c;color:#ffc2cb;animation:shake .28s}.option:disabled{cursor:default}@keyframes shake{25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}
+.feedback{min-height:30px;margin-top:14px;font-size:.95rem;font-weight:700}.feedback.good{color:var(--green)}.feedback.bad{color:#ff8d9e}.field{width:100%;border:1px solid #ffffff2b;border-radius:15px;padding:16px 17px;background:#ffffff09;color:white;font:500 1rem 'DM Sans',sans-serif;outline:none;transition:.2s}.field:focus{border-color:var(--lav);box-shadow:0 0 0 3px #bba4ff22}.field::placeholder{color:#8d83a5}.center{text-align:center}.big-score{font-family:'Playfair Display',serif;font-size:clamp(4.4rem,16vw,8rem);line-height:1;margin:18px 0;color:transparent;background:linear-gradient(120deg,#ff9acb,#c6aaff,#83f2c5);-webkit-background-clip:text;background-clip:text}.result-ring{width:150px;height:150px;border-radius:50%;display:grid;place-items:center;margin:18px auto;background:conic-gradient(var(--pink) var(--score,0%),#ffffff12 0);position:relative;animation:spinIn 1s ease both}.result-ring:before{content:"";position:absolute;inset:9px;border-radius:50%;background:#1d1731}.result-ring span{position:relative;font-size:2.6rem}@keyframes spinIn{from{transform:rotate(-100deg) scale(.6);opacity:0}to{transform:rotate(0) scale(1);opacity:1}}.divider{height:1px;background:linear-gradient(90deg,transparent,#ffffff25,transparent);margin:24px 0}.footer{text-align:center;color:#796f91;font-size:.75rem;margin-top:18px}.toast{position:fixed;left:50%;bottom:20px;transform:translate(-50%,20px);background:#241b3a;border:1px solid #ffffff22;padding:12px 18px;border-radius:14px;color:white;opacity:0;transition:.3s;z-index:5;max-width:90vw;text-align:center}.toast.show{opacity:1;transform:translate(-50%,0)}
+@media(max-width:520px){main{padding:14px 10px}.card{border-radius:23px;padding:24px 19px}.options{grid-template-columns:1fr}.option{min-height:66px;padding:15px}.row{flex-direction:column}.btn{width:100%}.topline{font-size:.78rem}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
+</style>
+</head>
+<body>
+<div id="particles" aria-hidden="true"></div>
+<main>
+  <section class="screen active" id="intro">
+    <div class="card center">
+      <div class="sticker">🧸💌</div><br>
+      <span class="eyebrow">✦ A tiny friendship investigation ✦</span>
+      <h1>Why should <span class="gradient">Dhruv</span><br>not block you?</h1>
+      <p>Big question. Serious consequences. One very unserious test.</p>
+      <p>Before Dhruv even thinks about pressing that block button, you get one chance to prove that you know him, value him, and deserve a permanent spot in his little corner of the world.</p>
+      <p>This isn't about being perfect. It's about the tiny details, the memories, and whether you've been paying attention. Ready to defend your friendship? 👀</p>
+      <div class="row" style="justify-content:center"><button class="btn primary" onclick="go('transition')">Let me prove it ✨ →</button></div>
+      <div class="small-note">10 questions · 2 choices each · friendship on the line (dramatically)</div>
+    </div>
+    <div class="footer">MADE WITH A LITTLE CHAOS & A LOT OF ✦</div>
+  </section>
+
+  <section class="screen" id="transition">
+    <div class="card center">
+      <div class="sticker">🎬🫧</div>
+      <span class="eyebrow">The plot thickens</span>
+      <h2>Wait… before the verdict,</h2>
+      <h2 class="gradient">who's taking this test?</h2>
+      <p>Every legendary friendship has a main character. Put your name here so your result has the right signature.</p>
+      <div style="max-width:430px;margin:24px auto 0"><input class="field" id="playerName" maxlength="32" autocomplete="name" placeholder="Your name goes here…" aria-label="Your name"></div>
+      <div class="row" style="justify-content:center"><button class="btn primary" onclick="beginTest()">That's me — next →</button><button class="btn secondary" onclick="go('intro')">← Back</button></div>
+      <div class="small-note">Choose wisely. The friendship court is now in session ⚖️</div>
+    </div>
+  </section>
+
+  <section class="screen" id="quiz">
+    <div class="card">
+      <div class="topline"><span id="qCount">QUESTION 01 / 10</span><span id="scoreLive">✦ Score: 0</span></div>
+      <div class="progress-wrap"><div class="progress" id="progress"></div></div>
+      <div class="center"><div class="sticker" id="qSticker">🕵️‍♀️</div></div>
+      <div class="eyebrow" id="qCategory">THE DHruv FILES</div>
+      <div class="question" id="qText">Question goes here?</div>
+      <div class="options" id="options"></div>
+      <div class="feedback" id="feedback" aria-live="polite"></div>
+      <div class="small-note">Pick one. No changing your answer after the friendship universe sees it. ✨</div>
+    </div>
+  </section>
+
+  <section class="screen" id="scoreScreen">
+    <div class="card center">
+      <div class="sticker">📊💫</div><span class="eyebrow">The evidence is in</span>
+      <h2>Here's your friendship score, <span class="gradient" id="scoreName">bestie</span>.</h2>
+      <div class="result-ring" id="scoreRing"><span>🏆</span></div>
+      <div class="big-score"><span id="finalScore">0</span><span style="font-size:.35em;color:#c8bddc"> / 10</span></div>
+      <p id="scoreCaption">Your result is ready.</p>
+      <div class="divider"></div>
+      <p>Take a breath. This is the part where the dramatic background music gets louder. 🎻</p>
+      <div class="row" style="justify-content:center"><button class="btn primary" onclick="showVerdict()">Show my fate 💌 →</button></div>
+    </div>
+  </section>
+
+  <section class="screen" id="verdict">
+    <div class="card center">
+      <div class="sticker" id="verdictSticker">💌</div>
+      <span class="eyebrow" id="verdictEyebrow">THE OFFICIAL VERDICT</span>
+      <h2 id="verdictTitle">The verdict is…</h2>
+      <p id="verdictText"></p>
+      <div class="divider"></div>
+      <p id="verdictExtra"></p>
+      <div class="row" style="justify-content:center"><button class="btn primary" onclick="copyResult()">Copy my result ✨</button><button class="btn secondary" onclick="restartInfo()">Back to the beginning ↺</button></div>
+      <div class="small-note" id="onceNote">This result is yours. Keep it cute. 💗</div>
+    </div>
+    <div class="footer">FRIENDSHIP STATUS: COMPLICATED, BUT CUTE.</div>
+  </section>
+</main>
+<div class="toast" id="toast" role="status"></div>
+<script>
+const questions = [
+ {cat:"The little things",sticker:"🧋",q:"Dhruv has had a long, exhausting day. What's the best move?",a:["Listen first, let him vent, then make him laugh","Tell him he's being dramatic and disappear"],correct:0,why:"Being there matters more than having a perfect answer."},
+ {cat:"Loyalty check",sticker:"🛡️",q:"Someone talks badly about Dhruv when he's not around. You…",a:["Join in so you fit in","Don't pile on, and stand up for him when it matters"],correct:1,why:"Loyalty shows up when the person isn't in the room."},
+ {cat:"Friendship basics",sticker:"💬",q:"Dhruv goes quiet for a while. What do you do?",a:["Check in gently without forcing him to talk","Assume the friendship is over and make it worse"],correct:0,why:"A gentle check-in gives space without making someone feel forgotten."},
+ {cat:"Memory lane",sticker:"📸",q:"What's a real sign that you know someone well?",a:["You memorised their entire contact list","You notice the small things they like, dislike, and care about"],correct:1,why:"Knowing someone is about paying attention, not collecting trivia."},
+ {cat:"The apology test",sticker:"🩹",q:"You accidentally hurt Dhruv's feelings. Best response?",a:["Say sorry sincerely and try to understand why it hurt","Say 'it's not that deep' and blame him"],correct:0,why:"A real apology takes responsibility instead of dismissing feelings."},
+ {cat:"Green flag energy",sticker:"🌱",q:"What keeps a friendship healthy?",a:["Making every conversation a competition","Respect, honesty, boundaries, and effort from both sides"],correct:1,why:"Healthy friendship feels safe for both people."},
+ {cat:"The trust vault",sticker:"🔐",q:"Dhruv tells you something personal in confidence. You…",a:["Keep it private unless there's a genuine safety concern","Turn it into group-chat entertainment"],correct:0,why:"Trust is precious. Don't turn someone's vulnerability into gossip."},
+ {cat:"Real-life bestie",sticker:"🫶",q:"You disagree with Dhruv about something. What now?",a:["Respectfully explain your side and hear his too","Insist you're right and insult him until he agrees"],correct:0,why:"You can disagree and still treat each other with respect."},
+ {cat:"Effort matters",sticker:"🕯️",q:"A friendship is getting busy and distant. A good next step is…",a:["Wait forever for the other person to do everything","Make time to check in and communicate honestly"],correct:1,why:"Friendship needs mutual effort, even in busy seasons."},
+ {cat:"Final boss",sticker:"👑",q:"What's the strongest reason Dhruv shouldn't block a good friend?",a:["Because nobody is allowed to have boundaries","Because the friendship has care, respect, honesty, and room to grow"],correct:1,why:"A good friendship is built on care and respect—not pressure."}
+];
+let index=0,score=0,player="",answers=[],locked=false,finished=false;
+const $=id=>document.getElementById(id);
+function go(id){document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));$(id).classList.add('active');window.scrollTo({top:0,behavior:'smooth'});}
+function toast(msg){$('toast').textContent=msg;$('toast').classList.add('show');setTimeout(()=>$('toast').classList.remove('show'),2200)}
+function beginTest(){
+ if(finished || localStorage.getItem('dhruvTestUsed')==='yes'){toast("This friendship test has already been completed on this browser 💌");return;}
+ const val=$('playerName').value.trim();if(!val){$('playerName').focus();toast("Your name first, mystery bestie 🥹");return;}
+ player=val.slice(0,32);index=0;score=0;answers=[];locked=false;renderQuestion();go('quiz');
+}
+function renderQuestion(){
+ locked=false;const q=questions[index];$('qCount').textContent=`QUESTION ${String(index+1).padStart(2,'0')} / 10`;$('scoreLive').textContent=`✦ Score: ${score}`;$('progress').style.width=`${index/questions.length*100}%`;$('qSticker').textContent=q.sticker;$('qCategory').textContent=q.cat.toUpperCase();$('qText').textContent=q.q;$('feedback').textContent='';$('feedback').className='feedback';
+ const options=$('options');options.innerHTML='';
+ q.a.forEach((answer,i)=>{const b=document.createElement('button');b.className='option';b.textContent=(i===0?'A  ·  ':'B  ·  ')+answer;b.onclick=()=>choose(i,b);options.appendChild(b)});
+}
+function choose(choice,button){
+ if(locked)return;locked=true;const q=questions[index];const buttons=[...$('options').children];buttons.forEach(b=>b.disabled=true);
+ if(choice===q.correct){score++;button.classList.add('correct');$('feedback').textContent='✓ Correct! '+q.why;$('feedback').classList.add('good')}
+ else{button.classList.add('wrong');buttons[q.correct].classList.add('correct');$('feedback').textContent='✕ Not quite! '+q.why;$('feedback').classList.add('bad')}
+ answers.push(choice===q.correct);$('scoreLive').textContent=`✦ Score: ${score}`;$('progress').style.width=`${(index+1)/questions.length*100}%`;
+ setTimeout(()=>{index++;if(index<questions.length)renderQuestion();else finishTest()},1250);
+}
+function finishTest(){
+ finished=true;try{localStorage.setItem('dhruvTestUsed','yes')}catch(e){}
+ $('scoreName').textContent=player;$('finalScore').textContent=score;$('scoreRing').style.setProperty('--score',`${score*10}%`);
+ $('scoreCaption').textContent=score>=8?"Okayyy, you were paying attention! The friendship receipts are looking good. ✨":score>=7?"A solid score! There's care here, and a few details left to learn. 💗":"The friendship detective needs a little more fieldwork… 🕵️";
+ go('scoreScreen');
+}
+function showVerdict(){
+ if(score<7){
+  $('verdictSticker').textContent='🚨🥀';$('verdictEyebrow').textContent='FRIENDSHIP COURT: NOT CONVINCED';$('verdictTitle').innerHTML='Oh no, <span class="gradient">'+escapeHTML(player)+'</span>…';
+  $('verdictText').textContent="You scored "+score+"/10. The imaginary friendship court is raising one very dramatic eyebrow. At this rate, Dhruv might say, “I need to reconsider this friendship” — and threaten to hit block. 😭";
+  $('verdictExtra').textContent="But listen: a quiz score doesn't decide a real friendship. Ask him about the things you don't know, remember the little details, be honest, show up, and respect his space. You can always do better than a score. This is your character-development episode. 🌱";
+ }else{
+  $('verdictSticker').textContent='💖👑';$('verdictEyebrow').textContent='OFFICIALLY A DHruv-LORE EXPERT';$('verdictTitle').innerHTML='You understood the assignment, <span class="gradient">'+escapeHTML(player)+'</span>!';
+  $('verdictText').textContent="You scored "+score+"/10. The block button has been escorted out of the building. 🫡💗 You showed that you understand the kind of things that make a friendship feel safe: loyalty, honesty, patience, and being there without making it a performance.";
+  $('verdictExtra').textContent="May your friendship collect ridiculous memories, late-night talks, inside jokes, random check-ins, and a thousand tiny reasons to stay. Keep choosing kindness, keep respecting boundaries, and never stop learning the person behind the name. Dhruv, this one might be a keeper. 🫶✨";
+ }
+ $('onceNote').textContent="A playful result, not a real verdict. Friendships deserve honesty and boundaries.";
+ go('verdict');
+}
+function escapeHTML(s){return s.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function copyResult(){const text=`The Dhruv Test 💌\\nName: ${player}\\nScore: ${score}/10\\n${score>=7?'The block button has been escorted out. 💖':'Friendship character-development episode unlocked. 🌱'}`;if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(text).then(()=>toast("Result copied! Send it to Dhruv 💌")).catch(()=>fallbackCopy(text));else fallbackCopy(text)}
+function fallbackCopy(text){const el=document.createElement('textarea');el.value=text;document.body.appendChild(el);el.select();try{document.execCommand('copy');toast('Result copied! 💌')}catch(e){toast(text)}el.remove()}
+function restartInfo(){toast("One attempt only on this browser — the result is saved 💗");go('verdict')}
+$('playerName').addEventListener('keydown',e=>{if(e.key==='Enter')beginTest()});
+(function makeParticles(){const container=$('particles');const icons=['✦','♡','✧','⋆','💗','✿'];for(let i=0;i<27;i++){const s=document.createElement('span');s.className='particle';s.textContent=icons[Math.floor(Math.random()*icons.length)];s.style.left=Math.random()*100+'%';s.style.fontSize=(12+Math.random()*17)+'px';s.style.animationDuration=(12+Math.random()*18)+'s';s.style.animationDelay=(-Math.random()*25)+'s';container.appendChild(s)}})();
+if(localStorage.getItem('dhruvTestUsed')==='yes'){$('onceNote').textContent="This browser has already completed the test once. Your result is intentionally locked."}
+</script>
+</body>
+</html>
